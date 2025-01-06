@@ -2,33 +2,35 @@ import { menu_list } from "../../assets/assets";
 import "./ExploreMenu.css";
 
 function ExploreMenu({ category, setCategory }) {
-  // Helper function to handle category selection
-  const handleCategoryClick = (menuName) => {
-    setCategory((prevCategory) =>
-      prevCategory === menuName ? "All" : menuName
-    );
-  };
-
   return (
     <div className="explore-menu" id="explore-menu">
-      <h1>Explore Our Menu</h1>
+      <h1>Explore our menu</h1>
       <p className="explore-menu-text">
-        Discover a variety of options tailored to your taste. Choose from a
-        range of delicious and carefully crafted items to satisfy your cravings.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+        itaque earum eos consequatur! Aut voluptatem officiis laborum velit
+        cupiditate saepe illum aspernatur eum vel, itaque nihil harum
       </p>
       <div className="explore-menu-list">
-        {menu_list.map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handleCategoryClick(item.menu_name)}
-            className={`explore-menu-list-item ${
-              category === item.menu_name ? "active" : ""
-            }`}
-          >
-            <img src={item.menu_image} alt={item.menu_name} />
-            <p>{item.menu_name}</p>
-          </div>
-        ))}
+        {menu_list.map((item, index) => {
+          return (
+            <div
+              onClick={() =>
+                setCategory((prev) =>
+                  prev === item.menu_name ? "All" : item.menu_name
+                )
+              }
+              key={index}
+              className="explore-menu-list-item"
+            >
+              <img
+                className={category === item.menu_name ? "active" : ""}
+                src={item.menu_image}
+                alt=""
+              />
+              <p>{item.menu_name}</p>
+            </div>
+          );
+        })}
       </div>
       <hr />
     </div>
