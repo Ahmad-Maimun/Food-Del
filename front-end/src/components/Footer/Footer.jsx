@@ -13,6 +13,11 @@ const Footer = () => {
             inventore eveniet placeat nam, est dolorum aperiam dolores porro
             ducimus reprehenderit molestiae?
           </p>
+          <div className="footer-social-icons">
+            <img src={assets.facebook_icon} alt="" />
+            <img src={assets.twitter_icon} alt="" />
+            <img src={assets.linkedin_icon} alt="" />
+          </div>
         </div>
         <div className="footer-content-center"></div>
         <div className="footer-content-right"></div>
