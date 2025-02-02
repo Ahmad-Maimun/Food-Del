@@ -17,6 +17,11 @@ function Cart() {
         </div>
         <br />
         <hr />
+        {food_list.map((item, index) => {
+          if (cartItems[item.id] > 0) {
+            return <div></div>;
+          }
+        })}
       </div>
     </div>
   );
